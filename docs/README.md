@@ -1,66 +1,40 @@
-First of all (even before the block's name), its README.md should contain the following sentence at the very beginning:
-
-`📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).`
-
-> :warning: *Remember to replace the values between braces according to your scenario. For example: https://github.com/vtex-apps/breadcrumb*
-
-# BLOCK NAME
+📢 Use this project, [contribute](https://github.com/vtex-apps/brightedge-integration) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-Under the block's name, you should explain the topic, giving a **brief description** of the **block's functionality** in a store.
+# BrightEdge
 
-Next, **add media** (either an image of a GIF) with the rendered block, so that users can better understand how the block works in practice. 
+This app implements BrightEdge AutoPilot - Self Connecting Pages within VTEX IO. The app provides a block which can be placed in your store layout and which will be populated with dynamic link content designed to improve SEO.
 
-![Media Placeholder](https://user-images.githubusercontent.com/52087100/71204177-42ca4f80-227e-11ea-89e6-e92e65370c69.png)
+## Configuration
 
-## Configuration 
+1. [Install](https://vtex.io/docs/recipes/store/installing-an-app) `vtex.brightedge-integration` in the desired account.
+2. In your account's admin dashboard, go to `Apps > My Apps` and then click the box for `BrightEdge`.
+3. Enter your BrightEdge `Account ID` in the provided settings field and then click Save.
+4. In your `store-theme`, add BrightEdge as a dependency:
 
-In this section, you first must **add the primary instructions** that will allow users to use the block in their store, such as adding the block's app as a dependency in the `manifest.json` and declaring the block itself in a given template.
+```json
+"dependencies": {
+    "vtex.brightedge-integration": "0.x"
+  }
+```
 
-Next, add the **block's props table**:
+5. In your `store-theme`'s `store/` folder, place the `brightedge` block in the desired location (BrightEdge recommends displaying their link content in the store's footer). For example:
 
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
-
-
-Remember to also **showcase any necessary disclaimer** related to the block in this section, such as the different behavior it may display during its configuration. 
-
-## Modus Operandi *(not mandatory)*
-
-There are scenarios in which a block can behave differently in a store, according to how it was added to the catalog, for example. It's crucial to go through these **behavioral changes** in this section, allowing users to fully understand the **practical application** of the block in their store.
-
-If you feel compelled to give further details about the block, such as it's **relationship with the VTEX admin**, don't hesitate to use this section. 
-
-## Customization
-
-The first thing that should be present in this section is the sentence below, showing users the recipe pertaining to CSS customization in blocks:
-
-`In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).`
-
-Thereafter, you should add a single column table with the available CSS handles for that block:
-
-| CSS Handles |
-| ----------- | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` |
-
-
-If there are none, add the following sentence instead:
-
-`The component still doesn't have CSS Handles for its specific customization.`
-
----
-
-Check out some documentation models that are already live: 
-- [Breadcrumb](https://github.com/vtex-apps/breadcrumb)
-- [Image](https://vtex.io/docs/components/general/vtex.store-components/image)
+```json
+"footer-layout.desktop": {
+    "children": [
+      "brightedge",
+      "flex-layout.row#footer-1-desktop",
+      "flex-layout.row#footer-2-desktop",
+      "flex-layout.row#footer-3-desktop"
+    ]
+  },
+```
 
 ## Contributors ✨
 
@@ -71,6 +45,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
