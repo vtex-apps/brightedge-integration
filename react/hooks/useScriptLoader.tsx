@@ -23,7 +23,6 @@ function useScript(src: string) {
     // Create script
     const script = document.createElement('script')
     script.src = src
-    script.async = true
 
     // Script event listener callbacks for load and error
     const onScriptLoad = () => {
@@ -48,8 +47,10 @@ function useScript(src: string) {
     script.addEventListener('load', onScriptLoad)
     script.addEventListener('error', onScriptError)
 
-    // Add script to document body
-    document.body.appendChild(script)
+    // Add script to document head
+
+    const [t] = document.getElementsByTagName('script')
+    t.parentNode?.insertBefore(script, t)
 
     // Remove event listeners on cleanup
     return () => {
