@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.0.2] - 2020-08-18
+
 ### Changed
 
 - Add BrightEdge script to head instead of at end of body, make script synchronous
