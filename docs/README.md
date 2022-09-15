@@ -6,7 +6,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# BrightEdge
+# BrightEdge 
 
 This app implements BrightEdge AutoPilot - Self Connecting Pages within VTEX IO. The app provides a block which can be placed in your store layout and which will be populated with dynamic link content designed to improve SEO.
 
